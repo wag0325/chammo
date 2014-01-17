@@ -1,14 +1,41 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
+<header>
+  <div class="topbar">
     <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home",    root_path %></li>
-          <li><%= link_to "Help",    help_path %></li>
-          <li><%= link_to "Sign in", '#' %></li>
-        </ul>
+      
+    </div>
+  </div> 
+
+  <div class="container">
+    <div class="row title-bar desktop-title-bar">
+    </div>
+    <div class="row title-bar tablet-title-bar">
+    </div>
+    <div class="row title-bar phone-title-bar">
+    </div>
+    <div class="row title-bar small-title-bar">
+    </div>
+  </div> 
+
+  <div class="navigation-bar">
+    <div class="container">
+      <nav class="top-bar">
+        
       </nav>
+      <%= link_to "sample app", '#' , id: "logo" %>   
+      <div class="row main-bar">
+        <div class="ten columns navbar">
+          <ul class="nav pull-right">
+           
+            <li><%= link_to "Home",    root_path %></li>
+            <li><%= link_to "Help",    help_path %></li>
+            <li><%= link_to "Sign in", '#' %></li>
+          </ul>
+        </div>
+        <div class="two columns">
+        </div>
+        
+      </div>
     </div>
   </div>
 </header>
+

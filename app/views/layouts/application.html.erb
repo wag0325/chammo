@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all",
-                                            "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <%= render 'layouts/parlirish' %>
+  <head>
+  	<meta charset="utf-8" />
 
-<%= yield %>
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-</body>
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title>Ruby on Rails Tutorial Sample App | <%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="wrap">
+    <%= render 'layouts/header' %>
+    <aside>
+    </aside>
+    <section role="main">
+      <div class="row">
+        <div class="large-3 medium-4 columns">
+          <div class="hide-for-small">
+            <%= render 'layouts/sidebar' %>
+          </div>  
+        </div>
+        <div class="large-9 medium-8 columns">
+
+          <%= yield %>
+        </div>
+      </div><!--.row ends-->
+
+      <%=render 'layouts/footer'%>
+
+    </section>
+    
+   
+
+    </div><!--.wrap ends-->
+
+    
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
+
