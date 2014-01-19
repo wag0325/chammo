@@ -1353,4 +1353,8 @@ $default-float: left;
   @extend .control-group;
   @extend .error;
 }
+
+.alert {
+  color: purple;
+}
 @import 'foundation';
